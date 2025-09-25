@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-09-25T18:12:00.979056",
+  "system_info": {
+    "platform": "Linux aarch64",
+    "kernel": "6.15.11-v8-16k+",
+    "python_version": "3.11.2",
+    "root_privileges": true
+  },
+  "rtos_environment": {
+    "memory_locked": true,
+    "rt_priority_set": true,
+    "gc_disabled": true,
+    "cpu_affinity_set": true
+  },
+  "latency_results": {
+    "min_latency_us": 1,
+    "avg_latency_us": 1,
+    "max_latency_us": 6,
+    "jitter_us": 5,
+    "duration": 30,
+    "success": true,
+    "rt_class": "Hard Real-Time",
+    "rt_rating": "\u2605\u2605\u2605\u2605\u2605"
+  },
+  "thermal_data": {
+    "initial_temp": 61.15,
+    "final_temp": 60.05,
+    "temp_rise": -1.1000000000000014
+  }
+}
