@@ -1,0 +1,293 @@
+{
+  "timestamp": "2025-09-28T14:32:28.563826",
+  "test_config": {
+    "duration": 15,
+    "priority": 99,
+    "algorithm_tests": true,
+    "multicore_tests": true,
+    "environment_monitoring": true,
+    "save_results": true,
+    "show_progress": true
+  },
+  "system_info": {
+    "os_info": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "uname": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "cpu_info": "AMD Ryzen 7 7700X 8-Core Processor",
+    "memory_gb": 31.0,
+    "platform": "Linux-6.8.1-1034-realtime-x86_64-with-glibc2.39",
+    "architecture": "64bit",
+    "processor": "x86_64",
+    "python_version": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+    "cpu_count": 16,
+    "rt_kernel_capable": true
+  },
+  "validation": {
+    "system_ready": true,
+    "warnings": [
+      "cyclictest not available - will use simulation"
+    ],
+    "recommendations": [
+      "16 cores detected - multicore tests enabled"
+    ],
+    "system_info": {
+      "os_info": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+      "uname": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+      "cpu_info": "AMD Ryzen 7 7700X 8-Core Processor",
+      "memory_gb": 31.0,
+      "platform": "Linux-6.8.1-1034-realtime-x86_64-with-glibc2.39",
+      "architecture": "64bit",
+      "processor": "x86_64",
+      "python_version": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+      "cpu_count": 16,
+      "rt_kernel_capable": true
+    }
+  },
+  "environment_setup": {
+    "success": true,
+    "memory_locked": true,
+    "rt_priority_set": false,
+    "cpu_affinity_set": true,
+    "gc_disabled": true,
+    "warnings": []
+  },
+  "multicore_optimization": {
+    "optimizations_applied": [
+      "Isolated CPU 15 for RT tasks",
+      "RT scheduling available (max priority: 99)",
+      "Memory locking supported for RT tasks"
+    ],
+    "warnings": [],
+    "topology": {
+      "total_cores": 16,
+      "available_cores": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "isolated_cores": [
+        15
+      ],
+      "affinity_supported": true,
+      "logical_processors": 16,
+      "physical_cores": 8,
+      "hyperthreading": true
+    }
+  },
+  "cyclictest_results": {
+    "min_latency_us": 9,
+    "avg_latency_us": 19,
+    "max_latency_us": 53,
+    "jitter_us": 44,
+    "duration": 15,
+    "success": true,
+    "simulated": true,
+    "note": "Simulated cyclictest results - cyclictest not available"
+  },
+  "algorithm_results": {
+    "quick_sort": {
+      "algorithm": "quicksort",
+      "data_size": 1000,
+      "iterations": 5,
+      "execution_time_ms": 0.611,
+      "min_time_ms": 0.568,
+      "max_time_ms": 0.647,
+      "all_times": [
+        0.6470170000056896,
+        0.5892389999644365,
+        0.6175219999704495,
+        0.6322199999431177,
+        0.568309999948724
+      ],
+      "success": true
+    },
+    "merge_sort": {
+      "algorithm": "merge_sort",
+      "data_size": 1000,
+      "iterations": 5,
+      "execution_time_ms": 0.867,
+      "min_time_ms": 0.853,
+      "max_time_ms": 0.892,
+      "all_times": [
+        0.8915030000480328,
+        0.8714760000430033,
+        0.8595939999622715,
+        0.8531119999588554,
+        0.8602049999808514
+      ],
+      "success": true
+    },
+    "matrix_multiplication": {
+      "algorithm": "matrix_multiplication",
+      "matrix_size": 50,
+      "iterations": 5,
+      "execution_time_ms": 6.907,
+      "operations": 125000,
+      "success": true
+    },
+    "fft_simulation": {
+      "algorithm": "fft_simulation",
+      "data_size": 512,
+      "iterations": 5,
+      "execution_time_ms": 58.083,
+      "complexity": "O(n\u00b2) - Simplified DFT",
+      "success": true
+    }
+  },
+  "multicore_stress": {
+    "total_cores_tested": 16,
+    "total_operations": 403520000,
+    "avg_ops_per_core": 25220000.0,
+    "individual_results": [
+      {
+        "core_id": 0,
+        "operations": 29460000,
+        "duration": 5.003191947937012,
+        "ops_per_second": 5888241.0082522165,
+        "success": true
+      },
+      {
+        "core_id": 1,
+        "operations": 26940000,
+        "duration": 5.000255346298218,
+        "ops_per_second": 5387724.8528806,
+        "success": true
+      },
+      {
+        "core_id": 2,
+        "operations": 22070000,
+        "duration": 5.005388021469116,
+        "ops_per_second": 4409248.574803258,
+        "success": true
+      },
+      {
+        "core_id": 3,
+        "operations": 22430000,
+        "duration": 5.036839962005615,
+        "ops_per_second": 4453188.937745923,
+        "success": true
+      },
+      {
+        "core_id": 4,
+        "operations": 23380000,
+        "duration": 5.0001819133758545,
+        "ops_per_second": 4675829.880800293,
+        "success": true
+      },
+      {
+        "core_id": 5,
+        "operations": 26430000,
+        "duration": 5.000290155410767,
+        "ops_per_second": 5285693.265499872,
+        "success": true
+      },
+      {
+        "core_id": 6,
+        "operations": 21720000,
+        "duration": 5.0202672481536865,
+        "ops_per_second": 4326462.900553353,
+        "success": true
+      },
+      {
+        "core_id": 7,
+        "operations": 29670000,
+        "duration": 5.004945516586304,
+        "ops_per_second": 5928136.460561684,
+        "success": true
+      },
+      {
+        "core_id": 8,
+        "operations": 24410000,
+        "duration": 5.000232458114624,
+        "ops_per_second": 4881773.038448692,
+        "success": true
+      },
+      {
+        "core_id": 9,
+        "operations": 24030000,
+        "duration": 5.007993936538696,
+        "ops_per_second": 4798328.493306538,
+        "success": true
+      },
+      {
+        "core_id": 10,
+        "operations": 22710000,
+        "duration": 5.004377365112305,
+        "ops_per_second": 4538027.079716511,
+        "success": true
+      },
+      {
+        "core_id": 11,
+        "operations": 28970000,
+        "duration": 5.009566307067871,
+        "ops_per_second": 5782935.73220639,
+        "success": true
+      },
+      {
+        "core_id": 12,
+        "operations": 25020000,
+        "duration": 5.0001373291015625,
+        "ops_per_second": 5003862.564809927,
+        "success": true
+      },
+      {
+        "core_id": 13,
+        "operations": 25310000,
+        "duration": 5.00104546546936,
+        "ops_per_second": 5060941.792022799,
+        "success": true
+      },
+      {
+        "core_id": 14,
+        "operations": 22580000,
+        "duration": 5.0006630420684814,
+        "ops_per_second": 4515401.219807039,
+        "success": true
+      },
+      {
+        "core_id": 15,
+        "operations": 28390000,
+        "duration": 5.000073194503784,
+        "ops_per_second": 5677916.881538265,
+        "success": true
+      }
+    ],
+    "test_duration": 5,
+    "success": true
+  },
+  "environment_info": {
+    "os_info": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "uname": "Linux domas 6.8.1-1034-realtime #35-Ubuntu SMP PREEMPT_RT Tue Sep  9 12:37:21 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+    "cpu_info": "AMD Ryzen 7 7700X 8-Core Processor",
+    "memory_gb": 31.0,
+    "platform": "Linux-6.8.1-1034-realtime-x86_64-with-glibc2.39",
+    "architecture": "64bit",
+    "processor": "x86_64",
+    "python_version": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+    "cpu_count": 16,
+    "rt_kernel_capable": true
+  },
+  "composite_score": {
+    "composite_score": 55.36,
+    "components": {
+      "latency": 13.793103448275861,
+      "algorithms": 82.80292619928798,
+      "system": 100,
+      "environment": 50
+    },
+    "methodology": "Weighted average: Latency(40%) + Algorithms(30%) + System(20%) + Environment(10%)"
+  },
+  "cleanup": null
+}
