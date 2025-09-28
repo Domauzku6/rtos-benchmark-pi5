@@ -66,16 +66,20 @@ The original monolithic 2400+ line file has been expertly split into focused mod
 - **🧪 Enhanced Testability**: Individual modules can be tested independently
 - **📚 Better Documentation**: Each module is self-documenting with clear purpose
 
-## 📁 Project Structure
+## 📁 Complete Project Structure
 
 ```
-rtos_benchmark/
+rtos-benchmark-pi5/
 ├── main.py                          # 🎯 Primary CLI entry point
 ├── main_simplified.py               # 🎯 Streamlined entry point  
 ├── rtos_full_board_benchmark.py    # 🎯 Backward compatibility wrapper
 ├── learn_algorithms.py              # 🎓 Interactive algorithm learning demo
-├── README.md                        # 📖 This documentation
-├── src/                            # 📦 Modular components
+├── README.md                        # 📖 Main project documentation
+├── LICENSE                          # MIT License
+├── SECURITY.md                      # Security policy
+├── HARD_REALTIME_RESULTS.md        # Performance achievements documentation
+├── src/                            # 📦 Core modular components
+│   ├── __init__.py
 │   ├── platform_compat.py         # Cross-platform utilities
 │   ├── rtos_env.py                # RTOS environment management
 │   ├── algorithms.py              # 🎓 Educational algorithm implementations  
@@ -83,7 +87,21 @@ rtos_benchmark/
 │   ├── multicore.py               # Multi-core management
 │   ├── results_board.py           # Results display & reporting
 │   └── benchmark_orchestrator.py  # Main coordination
-├── tests/                          # 🧪 Test suite
+├── system-tests/                   # 🧪 System-specific test implementations
+│   ├── pi-os-lite/                # Raspberry Pi OS Lite tests
+│   │   ├── README.md             # Pi OS specific documentation
+│   │   ├── pi_os_lite_main.py    # Pi OS test runner
+│   │   ├── pi_os_lite_main_simplified.py
+│   │   └── *.json                # Pi OS test results
+│   └── ubuntu-rt/                 # Ubuntu RT tests
+│       ├── README.md             # Ubuntu RT specific documentation
+│       ├── ubuntu_rt_main.py     # Ubuntu RT test runner
+│       ├── ubuntu_rt_main_simplified.py
+│       ├── ubuntu_rt_tests/      # Additional test modules
+│       │   ├── test_platform_compatibility.py
+│       │   └── test_rtos_config.py
+│       └── *.json                # Ubuntu RT test results
+├── tests/                          # 🧪 Main test suite
 ├── old_py/                         # 📦 Original files archive
 └── redundant/                      # 📦 Non-essential files archive
 ```
@@ -284,26 +302,6 @@ python3 main.py --results
 python3 main.py --help
 ```
 
-## Project Structure
-
-```
-rtos_benchmark/
-├── main.py                     # Main entry point and CLI
-├── src/                        # Source code modules
-│   ├── __init__.py
-│   ├── platform_compat.py      # Cross-platform compatibility layer
-│   ├── algorithms.py           # Algorithm benchmarking
-│   ├── rtos_env.py             # RTOS environment management
-│   ├── cyclictest.py           # cyclictest integration and simulation
-│   ├── results_board.py        # Results formatting and display
-│   ├── multicore.py            # Multicore management and CPU affinity
-│   └── benchmark_orchestrator.py # Main benchmark coordination
-├── tests/                      # Test modules (for future expansion)
-│   └── __init__.py
-├── docs/                       # Documentation (for future expansion)
-│   └── __init__.py
-└── README.md                   # This file
-```
 
 ## Detailed Features
 
