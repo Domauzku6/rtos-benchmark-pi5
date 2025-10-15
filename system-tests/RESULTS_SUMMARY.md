@@ -49,3 +49,36 @@ This document summarizes the latest tracked system test results across supported
 - `system-tests/ubuntu-rt/ubuntu_rt_rtos_full_board_results_20250928_143249.json`
 - `system-tests/ubuntu-rt/ubuntu_rt_rtos_full_board_results_20250928_143445.json`
 - `system-tests/ubuntu-rt/ubuntu_rt_rtos_full_board_results_20250928_143521.json`
+
+## Raspberry Pi: Pi OS Lite vs Debian PREEMPT_RT (this system)
+
+Requested comparison between:
+- Pi OS Lite (PREEMPT) — `Linux pilite 6.12.25+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.25-1+rpt1 (2025-04-30) aarch64 GNU/Linux`
+- Pi Debian PREEMPT_RT — `Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux`
+
+Head-to-head summary (from committed snapshots):
+- Real-time latency (cyclictest):
+  - Pi OS Lite:    min 1μs, avg 1μs, max 13μs, jitter 12μs
+  - Debian RT:     min 1μs, avg 1μs, max 12μs, jitter 11μs
+  - Takeaway: Debian PREEMPT_RT edges out with slightly lower max and jitter, both are excellent.
+
+- Algorithm performance (ms):
+  - QuickSort:     Pi OS Lite 1.253 vs Debian RT 1.242 (≈ parity)
+  - MergeSort:     Pi OS Lite 1.993 vs Debian RT 1.961 (≈ parity)
+  - Matrix 50x50:  Pi OS Lite 16.139 vs Debian RT 16.208 (≈ parity)
+  - FFT 512 (DFT): Pi OS Lite 131.481 vs Debian RT 132.944 (≈ parity)
+  - Takeaway: CPU compute on Pi is effectively the same across kernels; tiny swings are within run-to-run variance.
+
+- Multicore stress (5s total ops):
+  - Pi OS Lite:    39,010,000
+  - Debian RT:     38,280,000
+  - Takeaway: Nearly identical; small differences likely due to scheduling/thermal noise.
+
+- Composite score:
+  - Pi OS Lite:    60.69
+  - Debian RT:     61.43
+  - Takeaway: Composite slightly favors Debian PREEMPT_RT, driven by marginally tighter latency.
+
+Bottom line:
+- If your priority is determinism and the lowest jitter, Debian PREEMPT_RT shows a tiny advantage (12μs vs 13μs max, 11μs vs 12μs jitter) while retaining identical algorithm throughput.
+- Pi OS Lite remains an excellent low-overhead choice with practically equivalent performance; both are strong for Pi 5 real-time workloads.
