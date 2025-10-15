@@ -82,3 +82,25 @@ Head-to-head summary (from committed snapshots):
 Bottom line:
 - If your priority is determinism and the lowest jitter, Debian PREEMPT_RT shows a tiny advantage (12μs vs 13μs max, 11μs vs 12μs jitter) while retaining identical algorithm throughput.
 - Pi OS Lite remains an excellent low-overhead choice with practically equivalent performance; both are strong for Pi 5 real-time workloads.
+
+## Verification Re-runs and Variance Notes (2025-10-15)
+
+We re-ran the Debian PREEMPT_RT benchmarks and an independent cyclictest to validate results after a user-observed discrepancy:
+
+- New Debian RT benchmark snapshots added:
+  - `system-tests/pi-debian-rt/pi_debian_rt_rtos_full_board_results_20251015_233712.json` (Max 35μs)
+  - `system-tests/pi-debian-rt/pi_debian_rt_rtos_full_board_results_20251015_234033.json` (Max 16μs)
+
+- Independent cyclictest samples (10s, P99, -m, -S, -p99):
+  - Run 1: per-thread Max 11–23μs, Avg ≈ 1μs
+  - Run 2: per-thread Max 15–18μs, Avg ≈ 2μs
+
+Interpretation:
+- The earlier nominal snapshot (Max 12μs) remains representative of typical performance.
+- The 35μs event is a tail outlier, likely due to transient system noise (IRQ timing, governor ticks, background I/O). Subsequent runs and independent cyclictest corroborate stable 11–23μs maxima with ~1–2μs average.
+
+Methodology guidance:
+- For publication-grade reporting, perform multiple runs and aggregate:
+  - Report Avg(Max) across N runs and/or P99/P99.9 if available
+  - Include independent cyclictest records alongside benchmark JSON
+  - Optionally set CPU governor to performance and minimize background services to reduce variance
