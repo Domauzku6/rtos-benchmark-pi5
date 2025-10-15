@@ -25,3 +25,7 @@ Examples:
 
 - Large result files are intentionally committed for reproducibility and historical comparison.
 - See each folder's README for environment details, including the exact `uname -a` output.
+
+## Summary
+
+- See consolidated cross-OS results in `RESULTS_SUMMARY.md`.
