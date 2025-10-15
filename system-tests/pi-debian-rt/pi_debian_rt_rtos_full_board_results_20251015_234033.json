@@ -1,0 +1,192 @@
+{
+  "timestamp": "2025-10-15T23:40:24.006045",
+  "test_config": {
+    "duration": 30,
+    "priority": 99,
+    "algorithm_tests": true,
+    "multicore_tests": true,
+    "environment_monitoring": true,
+    "save_results": true,
+    "show_progress": true
+  },
+  "system_info": {
+    "os_info": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+    "uname": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+    "cpu_info": "Raspberry Pi 5 Model B Rev 1.0",
+    "memory_gb": 4.0,
+    "platform": "Linux-6.15.11-v8-16k+-aarch64-with-glibc2.36",
+    "architecture": "64bit",
+    "processor": "aarch64",
+    "python_version": "3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]",
+    "cpu_count": 4,
+    "rt_kernel_capable": true
+  },
+  "validation": {
+    "system_ready": true,
+    "warnings": [],
+    "recommendations": [
+      "cyclictest available - will use real measurements",
+      "4 cores detected - multicore tests enabled"
+    ],
+    "system_info": {
+      "os_info": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+      "uname": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+      "cpu_info": "Raspberry Pi 5 Model B Rev 1.0",
+      "memory_gb": 4.0,
+      "platform": "Linux-6.15.11-v8-16k+-aarch64-with-glibc2.36",
+      "architecture": "64bit",
+      "processor": "aarch64",
+      "python_version": "3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]",
+      "cpu_count": 4,
+      "rt_kernel_capable": true
+    }
+  },
+  "environment_setup": {
+    "success": true,
+    "memory_locked": true,
+    "rt_priority_set": true,
+    "cpu_affinity_set": true,
+    "gc_disabled": true,
+    "warnings": []
+  },
+  "multicore_optimization": {
+    "optimizations_applied": [
+      "Isolated CPU 3 for RT tasks",
+      "RT scheduling available (max priority: 99)",
+      "Memory locking supported for RT tasks"
+    ],
+    "warnings": [],
+    "topology": {
+      "total_cores": 4,
+      "available_cores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "isolated_cores": [
+        3
+      ],
+      "affinity_supported": true,
+      "logical_processors": 4
+    }
+  },
+  "cyclictest_results": {
+    "min_latency_us": 1,
+    "avg_latency_us": 1,
+    "max_latency_us": 16,
+    "jitter_us": 15,
+    "duration": 30,
+    "success": true
+  },
+  "algorithm_results": {
+    "quick_sort": {
+      "algorithm": "quicksort",
+      "data_size": 1000,
+      "iterations": 5,
+      "execution_time_ms": 1.345,
+      "min_time_ms": 1.182,
+      "max_time_ms": 1.581,
+      "all_times": [
+        1.218417999552912,
+        1.182398999844736,
+        1.5808839998499025,
+        1.372790000459645,
+        1.3718639993385295
+      ],
+      "success": true
+    },
+    "merge_sort": {
+      "algorithm": "merge_sort",
+      "data_size": 1000,
+      "iterations": 5,
+      "execution_time_ms": 1.96,
+      "min_time_ms": 1.95,
+      "max_time_ms": 1.989,
+      "all_times": [
+        1.9888139995600795,
+        1.9587209999372135,
+        1.950609999767039,
+        1.9500909993439564,
+        1.9524620001902804
+      ],
+      "success": true
+    },
+    "matrix_multiplication": {
+      "algorithm": "matrix_multiplication",
+      "matrix_size": 50,
+      "iterations": 5,
+      "execution_time_ms": 16.238,
+      "operations": 125000,
+      "success": true
+    },
+    "fft_simulation": {
+      "algorithm": "fft_simulation",
+      "data_size": 512,
+      "iterations": 5,
+      "execution_time_ms": 133.303,
+      "complexity": "O(n\u00b2) - Simplified DFT",
+      "success": true
+    }
+  },
+  "multicore_stress": {
+    "total_cores_tested": 4,
+    "total_operations": 38410000,
+    "avg_ops_per_core": 9602500.0,
+    "individual_results": [
+      {
+        "core_id": 0,
+        "operations": 7340000,
+        "duration": 5.000645160675049,
+        "ops_per_second": 1467810.605263813,
+        "success": true
+      },
+      {
+        "core_id": 1,
+        "operations": 9080000,
+        "duration": 5.005153656005859,
+        "ops_per_second": 1814130.1194828635,
+        "success": true
+      },
+      {
+        "core_id": 2,
+        "operations": 11880000,
+        "duration": 5.000208616256714,
+        "ops_per_second": 2375900.8696908485,
+        "success": true
+      },
+      {
+        "core_id": 3,
+        "operations": 10110000,
+        "duration": 5.000133752822876,
+        "ops_per_second": 2021945.9118053187,
+        "success": true
+      }
+    ],
+    "test_duration": 5,
+    "success": true
+  },
+  "environment_info": {
+    "os_info": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+    "uname": "Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux",
+    "cpu_info": "Raspberry Pi 5 Model B Rev 1.0",
+    "memory_gb": 4.0,
+    "platform": "Linux-6.15.11-v8-16k+-aarch64-with-glibc2.36",
+    "architecture": "64bit",
+    "processor": "aarch64",
+    "python_version": "3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]",
+    "cpu_count": 4,
+    "rt_kernel_capable": true
+  },
+  "composite_score": {
+    "composite_score": 58.72,
+    "components": {
+      "latency": 37.735849056603776,
+      "algorithms": 74.09273610508339,
+      "system": 82.0,
+      "environment": 50
+    },
+    "methodology": "Weighted average: Latency(40%) + Algorithms(30%) + System(20%) + Environment(10%)"
+  },
+  "cleanup": null
+}
