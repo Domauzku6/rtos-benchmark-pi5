@@ -1,4 +1,4 @@
-# Debian RT System Tests
+# Raspberry Pi Debian RT System Tests
 
 ## Test Environment
 - **Operating System**: Linux pilite 6.15.11-v8-16k+ #1 SMP PREEMPT_RT Sun Sep 28 23:54:45 BST 2025 aarch64 GNU/Linux
@@ -82,9 +82,9 @@
 
 ## File Structure
 ```
-debian-rt/
-├── README.md                                          # This comprehensive documentation
-└── debian_rt_rtos_full_board_results_20251015_232256.json  # Latest test results
+pi-debian-rt/
+├── README.md                                              # This comprehensive documentation
+└── pi_debian_rt_rtos_full_board_results_20251015_232256.json  # Latest test results
 ```
 
 ## Running Tests
