@@ -93,3 +93,8 @@ rt_*
 cyclictest_*
 latency_*
 *.trace
+
+# --- Exceptions for committed artifacts ---
+# Allow committed system test result snapshots and docs
+!system-tests/*/*_results_*.json
+!system-tests/*/README.md
