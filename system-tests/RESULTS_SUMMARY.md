@@ -1,5 +1,27 @@
 # Cross-OS Benchmark Summary
 
+## TL;DR (Pi 5: Debian PREEMPT_RT vs Pi OS Lite)
+
+Quick head-to-head using committed snapshots on Raspberry Pi 5:
+
+| Metric | Debian PREEMPT_RT (RT) | Pi OS Lite (non-RT) | Delta |
+|---|---:|---:|---:|
+| Avg latency (μs) | 1 | 1 | — |
+| Max latency (μs) | 12 | 13 | RT ~7–8% lower |
+| Jitter (μs) | 11 | 12 | RT ~8% lower |
+| Composite score | 61.43 | 60.69 | +0.74 (+1.2%) |
+| QuickSort (ms) | 1.242 | 1.253 | ≈ same |
+| MergeSort (ms) | 1.961 | 1.993 | ≈ same |
+| Matrix 50x50 (ms) | 16.208 | 16.139 | ≈ same |
+| FFT 512 (ms) | 132.944 | 131.481 | ≈ same |
+
+Notes:
+- RT improves determinism (worst-case and jitter) slightly under light load; throughput is essentially unchanged.
+- Independent cyclictest samples on RT showed per-thread Max 11–23μs with Avg ~1–2μs; one benchmark run saw a 35μs outlier followed by 16μs on immediate re-run (tail variance is expected).
+
+Quick links: `pi-debian-rt/` | `pi-os-lite/` | `ubuntu-rt/`
+
+
 This document summarizes the latest tracked system test results across supported OS profiles. All numbers are taken from committed JSON snapshots in `system-tests/*`.
 
 ## Profiles Included
